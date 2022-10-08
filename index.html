@@ -13,7 +13,7 @@
       const [counter, setCounter] = React.useState(0);
       console.log("rendered");
       const onClick = () => {
-        setCounter(counter + 1);
+        setCounter((current) => current + 1);
       };
       console.log("rendered");
       console.log(counter);
