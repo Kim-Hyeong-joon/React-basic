@@ -9,18 +9,24 @@
   <script type="text/babel">
     const root = document.getElementById("root");
     const App = () => {
-      console.log("rendered");
-      const [counter, setCounter] = React.useState(0);
-      console.log("rendered");
-      const onClick = () => {
-        setCounter((current) => current + 1);
+      const [minutes, setMinutes] = React.useState(0);
+      const onChange = (event) => {
+        setMinutes(event.target.value);
       };
-      console.log("rendered");
-      console.log(counter);
       return (
         <div>
-          <h3>Total click: {counter}</h3>
-          <button onClick={onClick}>Click Me</button>
+          <h1>Super Converter</h1>
+          <label htmlFor="minutes">Minutes</label>
+          <input
+            value={minutes}
+            id="minutes"
+            placeholder="Minutes"
+            type="number"
+            onChange={onChange}
+          />
+          <h4>You want to convert {minutes}</h4>
+          <label htmlFor="hours">Hours</label>
+          <input id="hours" placeholder="Hours" type="number" />
         </div>
       );
     };
