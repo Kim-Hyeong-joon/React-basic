@@ -10,11 +10,11 @@ function Movie({ id, coverImg, title, summary, genres }) {
           <img src={coverImg} alt={title} />
         </div>
         <div className={styles.description}>
-          <h2>{title}</h2>
-          <p>
+          <h2 className={styles.h2}>{title}</h2>
+          <p className={styles.p}>
             {summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}
           </p>
-          <span>genres</span>
+          <span className={styles.span}>genres</span>
           <ul>
             {genres.map((genre, index) => (
               <li key={index}>•{genre}</li>
